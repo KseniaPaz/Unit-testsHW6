@@ -40,41 +40,41 @@ class ListComparator:
 Код тестов:
 
 
-import pytest
-from ListComparator import ListComparator
+    import pytest
+    from ListComparator import ListComparator
 
-1. Тестирование функции вычисления среднего значения списка.
+    1. Тестирование функции вычисления среднего значения списка.
 
-@pytest.mark.parametrize("numbers, expected", [
-    ([4, 3, 2, 1], 2.5),
-    ([], 0),
-    ([20, 30, 40], 30),
-    ([-3, -2, -1], -2)
-])
-def test_average(numbers, expected):
-    assert ListComparator.calculate_average(numbers) == expected
+    @pytest.mark.parametrize("numbers, expected", [
+        ([4, 3, 2, 1], 2.5),
+        ([], 0),
+        ([20, 30, 40], 30),
+        ([-3, -2, -1], -2)
+    ])
+    def test_average(numbers, expected):
+        assert ListComparator.calculate_average(numbers) == expected
 
-2. Тестирование функции сравнения списков на основе их средних значений.
+    2. Тестирование функции сравнения списков на основе их средних значений.
     
 
-@pytest.mark.parametrize("list1, list2, expected", [
-    ([1, 2, 1], [1, 2, 1], "Средние значения равны"),
-    ([1, 2, 3, 4], [1], "Первый список имеет большее среднее значение"),
-    ([1], [1, 2, 3, 4], "Второй список имеет большее среднее значение"),
-    ([10, 20, 30], [1, 2, 3], "Первый список имеет большее среднее значение"),
-    ([10, 20], [30, 40], "Второй список имеет большее среднее значение")
-])
-def test_compare_lists(list1, list2, expected):
+    @pytest.mark.parametrize("list1, list2, expected", [
+        ([1, 2, 1], [1, 2, 1], "Средние значения равны"),
+        ([1, 2, 3, 4], [1], "Первый список имеет большее среднее значение"),
+        ([1], [1, 2, 3, 4], "Второй список имеет большее среднее значение"),
+        ([10, 20, 30], [1, 2, 3], "Первый список имеет большее среднее значение"),
+        ([10, 20], [30, 40], "Второй список имеет большее среднее значение")
+    ])
+    def test_compare_lists(list1, list2, expected):
     
-    assert ListComparator.compare_lists(list1, list2) == expected
+        assert ListComparator.compare_lists(list1, list2) == expected
 
 
 Отчет pylint/Checkstyle:
-https://github.com/KseniaPaz/Unit-testsHW6/PythonProject/info/Screenshot.png
+https://github.com/KseniaPaz/Unit-testsHW6/blob/main/PythonProject/info/Screenshot.png
 
 
 Отчет о покрытии тестами:
-https://github.com/KseniaPaz/Unit-testsHW6/PythonProject/info/Screenshot1.png
+https://github.com/KseniaPaz/Unit-testsHW6/blob/main/PythonProject/info/Screenshot1.png
 
 Выбор сценариев:
 Тестирование среднего значения - проверяет корректность расчета среднего значения, включая ситуацию с пустым списком.
